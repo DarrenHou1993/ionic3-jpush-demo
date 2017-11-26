@@ -1,6 +1,7 @@
 ### ionic3+jpush的不完整demo
 
 ## 注意事项
+  - 封装的依赖[ionic-native-jpush](https://github.com/DarrenHou1993/ionic-native-jpush.git)
   - 只包括的通用api的方法和事件
 
 ### 完整的api
