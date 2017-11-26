@@ -1,6 +1,7 @@
 ### ionic3+jpush的不完整demo
 
 ## 注意事项
+  - 安装[jpush](https://github.com/jpush/jpush-phonegap-plugin.git)的cordova插件 cordova plugin add jpush-phonegap-plugin --variable APP_KEY=your_jpush_appkey
   - 封装的依赖[ionic-native-jpush](https://github.com/DarrenHou1993/ionic-native-jpush.git)
   - 只包括的通用api的方法和事件
 
