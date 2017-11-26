@@ -5,13 +5,43 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h1>通用API说明（同时适用于 Android 和 iOS 系统）</h1>
+  <h4>注册事件</h4>
+  <button ion-button block (click)="initEvent()">注册事件</button>
+  事件信息:{{event|json}}
+  <h4>初始化、停止与恢复推送服务</h4>
+  <button ion-button block (click)="init()">init</button>
+  <button ion-button block (click)="stopPush()">stopPush</button>
+  <button ion-button block (click)="resumePush()">resumePush</button>
+  <button ion-button block (click)="isPushStopped()">isPushStopped</button>
+  推送服务开启状态:{{isPushStoppedResult}}
+  <h4>开启 Debug 模式</h4>
+  <button ion-button block (click)="setDebugMode(true)">setDebugMode</button>
+  <h4>获取 RegistrationID</h4>
+  <button ion-button block (click)="getRegistrationID()">getRegistrationID</button>
+  id:{{registrationID}}
+  <h4>设置别名与标签</h4>
+  <ion-item>
+    <ion-label fixed>别名</ion-label>
+    <ion-input type="text" [(ngModel)]="alias"></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="setAlias(alias)">setAlias</button>
+  <button ion-button block (click)="deleteAlias()">deleteAlias</button>
+  <button ion-button block (click)="getAlias()">getAlias</button>
+
+  <ion-item>
+    <ion-label fixed>标签</ion-label>
+    <ion-input type="text" [(ngModel)]="tag"></ion-input>
+  </ion-item>
+  我的标签:{{tags}}
+  <button ion-button block (click)="setTags()">setTags</button>
+  <button ion-button block (click)="addTags()">addTags</button>
+  <button ion-button block (click)="deleteTags()">deleteTags</button>
+  <button ion-button block (click)="cleanTags()">cleanTags</button>
+  <button ion-button block (click)="getAllTags()">getAllTags</button>
+  <button ion-button block (click)="checkTagBindState()">checkTagBindState</button>
+  <h4>判断系统设置中是否允许当前应用推送</h4>
+  <button ion-button block (click)="getUserNotificationSettings()">getUserNotificationSettings</button>
+  设置情况:{{userNotificationSettings}}
 </ion-content>
